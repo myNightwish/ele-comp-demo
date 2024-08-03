@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Scroll down to see the bottom-right button.
+    <el-backtop :right="100" :bottom="100" />
+    <el-button type="primary" @click="junmpUrl('/backtopone')">去backtop</el-button>
+    <el-button type="primary" @click="junmpUrl('/backtoptwo')">去页面顶部</el-button>
+    <el-button type="primary" @click="junmpUrl('/login')">去登录</el-button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  methods: {
+    junmpUrl (url) {
+      this.$router.push(url)
+    }
   }
 }
 </script>
